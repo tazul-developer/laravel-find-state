@@ -25,14 +25,13 @@
                         @foreach($divisions as $division)
                             <option value="{{$division->id}}">{{$division->name}}</option>
                         @endforeach
-
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Select District</label>
                     <select class="form-control" id="district" style="width: 100%;">
-                        <option value="0" disabled="true" selected="true">--select one--</option>
+
 
                     </select>
                 </div>
@@ -40,8 +39,7 @@
                 <div class="form-group">
                     <label>Select Thana</label>
                     <select class="form-control select2" id="thana" style="width: 100%;">
-                        <option selected="selected">Select Thana</option>
-                        <option>Alaska</option>
+
 
                     </select>
                 </div>
@@ -49,8 +47,20 @@
                 <div class="form-group">
                     <label>Select Postcode</label>
                     <select class="form-control select2" id="postCode" style="width: 100%;">
-                        <option selected="selected">Select Postcode</option>
-                        <option>Alaska</option>
+
+
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Search by Postcode</label>
+                    <select class="form-control select2" id="findByPostCode" style="width: 100%;">
+                        @foreach($PostCode as $pCode)
+                            <option value="{{$pCode->id}}">{{$pCode->code}}</option>
+                        @endforeach
 
                     </select>
                 </div>
@@ -78,6 +88,8 @@
                 var dist_id = $(this).val();
 
                 var option = "";
+
+
 
                 $.ajax({
                    type:'get',

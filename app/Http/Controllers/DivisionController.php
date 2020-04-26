@@ -18,7 +18,8 @@ class DivisionController extends Controller
     public function index()
     {
         $divisions = Division::all();
-        return view('divisions.view', compact('divisions'));
+        $PostCode = PostCode::all();
+        return view('divisions.view', compact('divisions', 'PostCode'));
     }
 
     /**

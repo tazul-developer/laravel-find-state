@@ -16,6 +16,7 @@ class CreatePostCodesTable extends Migration
         Schema::create('post_codes', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('thana_id');
+            $table->unsignedInteger('division_id');
             $table->string('code');
             $table->timestamps();
         });
